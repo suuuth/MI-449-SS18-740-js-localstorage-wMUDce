@@ -1,0 +1,35 @@
+body {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+p {
+  position: absolute;
+}
+
+main {
+  margin-top: 100px;
+  border: 2px solid #999;
+  border-radius: 5px;
+  box-shadow: 5px 10px 18px #888;
+  padding: 10px 30px 30px;
+  align-self: flex-start;
+}
+
+div {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+button {
+  border-style: none;
+  padding: 5px 8px;
+  margin: 0 10px;
+}
+
+button:active {
+  background: black;
+  color: white;
+}
