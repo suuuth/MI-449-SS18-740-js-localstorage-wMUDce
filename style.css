@@ -33,3 +33,13 @@ button:active {
   background: black;
   color: white;
 }
+
+.day {
+  background: white;
+  color: black;
+}
+
+.night {
+  background: black;
+  color: white;
+}

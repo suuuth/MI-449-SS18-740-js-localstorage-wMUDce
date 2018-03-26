@@ -5,34 +5,29 @@ if (isNaN(count)) {
   count = window.localStorage.setItem('count', count)
 } else {
   count = count + 1
-  $('span').html(count);
-  count = window.localStorage.setItem('count', count)
+  document.getElementById('counter').innerHTML = count
+  window.localStorage.setItem('count', count)
 }
 
-$(document).ready(function () {
-  var theme = window.localStorage.getItem('theme')
-  console.log('' + theme)
-  if (theme === 'night') {
-    $('div > button:last-child').trigger('click');
-    // console.log('night theme go!')
-  } else {
-    $('div > button:first-child').trigger('click');
-    // console.log('DAY theme go!')
-  }
-});
+var d = document.getElementById('daybtn')
+var n = document.getElementById('nightbtn')
 
-$('div > button:first-child').click(function DayTheme () {
-  $('body').css('background', '');
-  $('body').css('color', '');
-  $('main').css('color', '');
-  var theme = 'day'
-  window.localStorage.setItem('theme', theme)
-});
-
-$('div > button:last-child').click(function NightTheme () {
-  $('body').css('background', 'black');
-  $('body').css('color', 'white');
-  $('main').css('color', 'white');
+n.addEventListener('click', function NightTheme () {
+  document.body.setAttribute('class', 'night')
   var theme = 'night'
   window.localStorage.setItem('theme', theme)
-});
+})
+
+d.addEventListener('click', function DayTheme () {
+  document.body.setAttribute('class', 'day')
+  var theme = 'day'
+  window.localStorage.setItem('theme', theme)
+})
+
+var theme = window.localStorage.getItem('theme')
+console.log('' + theme)
+if (theme === 'night') {
+  document.body.setAttribute('class', 'night')
+} else {
+  document.body.setAttribute('class', 'day')
+}
